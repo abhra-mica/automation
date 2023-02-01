@@ -10,8 +10,7 @@ def test_calculation():
     base_url = 'https://api.publicapis.org/entries'
     print("Hello")
     response = requests.get(base_url)
-    data = response.json()
-    print(data)
+    print(response)
 
 
 
