@@ -6,12 +6,6 @@ def test_login():
 def test_logout():
     print("Logout Successful")
 
-def test_calculation():
-    base_url = 'https://api.publicapis.org/entries'
-    print("Hello")
-    response = requests.get(base_url)
-    print(response)
-
 def getRestAPIHeaders(applianceIP, username, password):
     data = {"username": username, "password": password}
     url = "https://" + applianceIP + "/rest/auth/login"
