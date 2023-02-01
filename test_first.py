@@ -24,5 +24,5 @@ def test_header():
     print(resp)
     status = requests.get(f'https://10.125.236.31:30622/AsmManager/lcm/status',
                                           headers=getRestAPIHeaders("10.125.236.31","admin","Dell@12345"),
-                                          verify=False)
+                                          verify=False).json()
     print(status)
