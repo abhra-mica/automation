@@ -22,4 +22,7 @@ def test_header():
     resp = getRestAPIHeaders("10.125.236.31","admin","Dell@12345")
     print("REsponse-- ")
     print(resp)
-
+    status = requests.get(f'https://10.125.236.31:30622/AsmManager/lcm/status',
+                                          headers=getRestAPIHeaders(ingress_ip, username, password),
+                                          verify=False)
+    print(status)
