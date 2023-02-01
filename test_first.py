@@ -22,7 +22,8 @@ def test_header():
     resp = getRestAPIHeaders("10.125.236.31","admin","Dell@12345")
     print("REsponse-- ")
     print(resp)
-    status = requests.get(f'https://10.125.236.31:30622/AsmManager/lcm/status',
+    lcmStatus = requests.get(f'https://10.125.236.31:30622/AsmManager/lcm/status',
                                           headers=getRestAPIHeaders("10.125.236.31","admin","Dell@12345"),
-                                          verify=False).json()
-    print(status)
+                                          verify=False).json()['lcmStatus']
+    print(lcmStatus)
+    assert lcmStatus == 'READY','LCMSTATUS should be ready'
