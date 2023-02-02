@@ -36,6 +36,6 @@ def test_lcmhealth():
     print(resp)
     lcmHealth = requests.get(f'https://10.125.236.31:30622/AsmManager/lcm/healthz',
                                           headers=getRestAPIHeaders("10.125.236.31","admin","Dell@12345"),
-                                          verify=False).json()
+                                          verify=False)
     print(lcmHealth)
     #assert lcmHealth == 'READY','LCMSTATUS should be Ready'
