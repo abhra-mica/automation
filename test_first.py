@@ -3,7 +3,7 @@ import requests
 from pytest import fixture
 
 @fixture()
-def open_close_cluster():
+def open_close_cluster(scope='module'):
     print("Function called to check all nodes are up")
     yield 
     print("Tearing down cluster as test passed")
