@@ -18,7 +18,8 @@ def getRestAPIHeaders(applianceIP, username, password):
     }
     return headers
 
-def test_header():
+@pytest.mark.sanity
+def test_lcmstatus():
     resp = getRestAPIHeaders("10.125.236.31","admin","Dell@12345")
     print("REsponse-- ")
     print(resp)
@@ -27,3 +28,14 @@ def test_header():
                                           verify=False).json()['lcmStatus']
     print(lcmStatus)
     assert lcmStatus == 'READY','LCMSTATUS should be Ready'
+    
+@pytest.mark.sanity    
+def test_lcmhealth():
+    resp = getRestAPIHeaders("10.125.236.31","admin","Dell@12345")
+    print("Health-- ")
+    print(resp)
+    lcmHealth = requests.get(f'https://10.125.236.31:30622/AsmManager/lcm/status',
+                                          headers=getRestAPIHeaders("10.125.236.31","admin","Dell@12345"),
+                                          verify=False).json()
+    print(lcmHealth)
+    #assert lcmHealth == 'READY','LCMSTATUS should be Ready'
