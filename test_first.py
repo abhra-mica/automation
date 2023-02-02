@@ -27,7 +27,7 @@ def getRestAPIHeaders(applianceIP, username, password):
     return headers
 
 @pytest.mark.sanity
-def test_lcmstatus():
+def test_lcmstatus(open_close_cluster):
     resp = getRestAPIHeaders("10.125.236.31","admin","Dell@12345")
     print("REsponse-- ")
     print(resp)
@@ -38,7 +38,7 @@ def test_lcmstatus():
     assert lcmStatus == 'READY','LCMSTATUS should be Ready'
     
 @pytest.mark.sanity    
-def test_lcmhealth():
+def test_lcmhealth(open_close_cluster):
     resp = getRestAPIHeaders("10.125.236.31","admin","Dell@12345")
     print("Health-- ")
     print(resp)
