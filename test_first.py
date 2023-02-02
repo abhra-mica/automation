@@ -26,4 +26,4 @@ def test_header():
                                           headers=getRestAPIHeaders("10.125.236.31","admin","Dell@12345"),
                                           verify=False).json()['lcmStatus']
     print(lcmStatus)
-    assert lcmStatus == 'INITIALIZING','LCMSTATUS should be initializing'
+    assert lcmStatus == 'READY','LCMSTATUS should be Ready'
