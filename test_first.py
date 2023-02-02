@@ -1,5 +1,13 @@
 import pytest
 import requests
+from pytest import fixture
+
+@fixture()
+def open_close_cluster
+    print("Function called to check all nodes are up")
+    yeild 
+    print("Tearing down cluster as test passed")
+
 def test_login():
     print("Login Successful")
     
