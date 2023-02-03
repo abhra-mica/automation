@@ -12,8 +12,10 @@ def open_close_cluster(scope='module'):
     
 def show_report():
     print("SHOWREPPORT--")
-    url = 'file:\\C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\GitTest\\report\\report.html'
+    #url = 'file:\\C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\GitTest\\report\\report.html'
+    url = 'file:\\C:\\ABHRA\\report.html'
     webbrowser.open_new_tab(url)
+    print("REPORT SHOWN")
     
 def test_login():
     print("Login Successful")
