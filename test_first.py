@@ -1,13 +1,19 @@
 import pytest
 import requests
 from pytest import fixture
+import webbrowser
 
 @fixture()
 def open_close_cluster(scope='module'):
     print("Function called to check all nodes are up")
     yield 
     print("Tearing down cluster as test passed")
-
+    show_report()
+    
+def show_report():
+    url = 'file:\\C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\GitTest\\report\\report.html'
+    webbrowser.open_new(url)
+    
 def test_login():
     print("Login Successful")
     
