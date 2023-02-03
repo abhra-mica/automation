@@ -13,7 +13,7 @@ def open_close_cluster(scope="module"):
 def show_report():
     print("SHOWREPPORT--")
     #url = 'file:\\C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\GitTest\\report\\report.html'
-    url = "file:\\C:\\ABHRA\\report.html"
+    url = "file://C://ABHRA//report.html"
     webbrowser.open_new_tab(url)
     print("REPORT SHOWN")
     
@@ -45,8 +45,7 @@ def test_lcmstatus(open_close_cluster):
                                           verify=False).json()['lcmStatus']
     print(lcmStatus)
     assert lcmStatus == 'READY','LCMSTATUS should be Ready'
-    
-@pytest.mark.sanity    
+      
 def test_lcmhealth(open_close_cluster):
     resp = getRestAPIHeaders("10.125.236.31","admin","Dell@12345")
     print("Health-- ")
