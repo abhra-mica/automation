@@ -3,8 +3,8 @@ import requests
 from pytest import fixture
 import webbrowser
 
-@fixture()
-def open_close_cluster(scope="module"):
+@fixture(scope="module")
+def open_close_cluster():
     print("Function called to check all nodes are up")
     yield 
     show_report()
